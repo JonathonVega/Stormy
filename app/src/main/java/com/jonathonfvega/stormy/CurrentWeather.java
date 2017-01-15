@@ -30,7 +30,7 @@ public class CurrentWeather {
     }
 
     public void setIcon(String Icon) {
-        this.mIcon = mIcon;
+        this.mIcon = Icon;
     }
 
     public int getIconId() {
@@ -76,23 +76,24 @@ public class CurrentWeather {
     }
 
     public void setTime(long Time) {
-        this.mTime = mTime;
+        this.mTime = Time;
     }
 
-    public double getTemperature() {
-        return mTemperature;
+    public int getTemperature() {
+        return (int)Math.round(mTemperature);
     }
 
     public void setTemperature(double Temperature) {
-        this.mTemperature = mTemperature;
+        this.mTemperature = Temperature;
     }
 
-    public double getPrecipChance() {
-        return mPrecipChance;
+    public int getPrecipChance() {
+        double precipPercentage = mPrecipChance * 100;
+        return (int)Math.round(precipPercentage);
     }
 
     public void setPrecipChance(double PrecipChance) {
-        this.mPrecipChance = mPrecipChance;
+        this.mPrecipChance = PrecipChance;
     }
 
     public double getHumidity() {
@@ -100,7 +101,7 @@ public class CurrentWeather {
     }
 
     public void setHumidity(double Humidity) {
-        this.mHumidity = mHumidity;
+        this.mHumidity = Humidity;
     }
 
     public String getSummary() {
@@ -108,6 +109,6 @@ public class CurrentWeather {
     }
 
     public void setSummary(String Summary) {
-        this.mSummary = mSummary;
+        this.mSummary = Summary;
     }
 }
